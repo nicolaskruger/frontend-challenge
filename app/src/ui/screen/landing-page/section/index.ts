@@ -1,0 +1,1 @@
+export * from "./background-lp/background-lp.section";

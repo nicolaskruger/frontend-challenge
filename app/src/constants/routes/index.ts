@@ -1,0 +1,1 @@
+export * from "./front/route-front.constats";
