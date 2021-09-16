@@ -1,10 +1,14 @@
-import { BackgroudLPSection } from "./section"
+import { ContainerComponent } from "../../components"
+import { BackgroudLPSection, ShapeWarperSimpleFixed } from "./section"
 
 
 const LandingPageScreen = () => {
     return (
         <BackgroudLPSection>
-            test
+            <ContainerComponent >
+                container
+            </ContainerComponent>
+            <ShapeWarperSimpleFixed />
         </BackgroudLPSection>
     )
 }
