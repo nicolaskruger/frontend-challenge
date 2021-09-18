@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { LogoImg } from "../../../../../assets"
+import { GetStartSection } from "../../section";
 import { HeaderLandigPageButton, HeaderLandingPageWebDiv, HeaderLandingPageWebLink, HeaderLandingPageWebSubDiv } from "./header-landing-page.web.style"
 
 const HeaderLandingPageWeb = () => {
+
+    const [open, setOpen] = useState(false);
+
     return (
         <HeaderLandingPageWebDiv>
             <HeaderLandingPageWebSubDiv>
@@ -13,9 +18,10 @@ const HeaderLandingPageWeb = () => {
                     About us
                 </HeaderLandingPageWebLink>
             </HeaderLandingPageWebSubDiv>
-            <HeaderLandigPageButton>
+            <HeaderLandigPageButton onClick={() => setOpen(true)}>
                 Get Started
             </HeaderLandigPageButton>
+            <GetStartSection open={open} setOpen={setOpen} />
         </HeaderLandingPageWebDiv>
     )
 }

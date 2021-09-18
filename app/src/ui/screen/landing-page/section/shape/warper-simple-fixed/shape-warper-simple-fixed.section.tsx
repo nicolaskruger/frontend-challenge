@@ -9,6 +9,7 @@ const WSFDiv = styled.div`
     top: calc(40vh - ${SHAPE_HEIGHT}/2);
     right: calc(5vw - 382px);
     overflow: visible;
+    z-index: -10;
 `;
 
 const ShapeWarperSimpleFixed: FC = () => {
