@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import './App.css';
+import { GlobalStyle } from './constants';
 import { RouterBuilder } from './routes/build/routes.builder';
 
 const DivApp = styled.div`
@@ -10,6 +11,7 @@ const DivApp = styled.div`
 const App = () => {
   return (
     <DivApp>
+      <GlobalStyle />
       <RouterBuilder />
     </DivApp>
   );

@@ -1,14 +1,14 @@
 import { FC } from "react";
 import styled from "styled-components";
+import { SHAPE_HEIGHT } from "../simple/shape-simple.section";
 import { ShapeWarperSimple } from "../warper-simple/shape-warper-simple.section";
 
 
 const WSFDiv = styled.div`
     position: fixed;
-    top: 0;
-    left: calc(1200px);
-    width: 300px;
-    height: 300px;
+    top: calc(40vh - ${SHAPE_HEIGHT}/2);
+    right: calc(5vw - 382px);
+    overflow: visible;
 `;
 
 const ShapeWarperSimpleFixed: FC = () => {
