@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 import styled from "styled-components"
 import { LandingPageInput, LandingPageInputPassword } from "..";
 
 import { CloseIcon } from "../../../../../assets";
-import { COLOR } from "../../../../../constants";
+import { COLOR, ROUTES_FRONT } from "../../../../../constants";
 import { GetStartLabel } from "./ section";
-import { GetStartCloseButton, GetStartSubDiv, GetStartTitlePrincipal, GetStartTitleSecundary } from "./get-start.style";
+import { GetStartButtonWarper, GetStartCloseButton, GetStartForm, GetStartLoginButton, GetStartSubDiv, GetStartTitlePrincipal, GetStartTitleSecundary } from "./get-start.style";
 
 type GetStartProps = {
     open: boolean;
@@ -32,6 +33,14 @@ const GetStartSection = (props: GetStartProps) => {
 
     const [password, setPassword] = useState("");
 
+    const history = useHistory();
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.stopPropagation();
+        event.preventDefault();
+        history.push(ROUTES_FRONT.DASH_BOARD)
+    }
+
     const render = () => (
         <GetStartDiv>
             <GetStartSubDiv>
@@ -41,15 +50,19 @@ const GetStartSection = (props: GetStartProps) => {
                 <GetStartTitleSecundary>
                     JUST LOGIN
                 </GetStartTitleSecundary>
-                <div>
+                <GetStartForm onSubmit={handleSubmit}>
                     <GetStartLabel label="Username:" >
                         <LandingPageInput value={user} onChange={setUser} />
                     </GetStartLabel>
                     <GetStartLabel label="Password:" >
                         <LandingPageInputPassword value={password} onChange={setPassword} />
                     </GetStartLabel>
-
-                </div>
+                    <GetStartButtonWarper>
+                        <GetStartLoginButton>
+                            LOGIN
+                        </GetStartLoginButton>
+                    </GetStartButtonWarper>
+                </GetStartForm>
                 <GetStartCloseButton onClick={() => setOpen(false)}>
                     <CloseIcon />
                 </GetStartCloseButton>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { COLOR } from "../../../../../constants";
 import { toPx } from "../../../../../util";
+import { ButtonMainComponent } from "../../../../components/button/button-main/button-main.compoent";
 
 
 const SIZE = 45;
@@ -61,5 +62,31 @@ const GetStartTitleSecundary = styled.h2`
     font-size: 34px;
 `;
 
+const GetStartForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    gap: 30px;
+`;
 
-export { GetStartSubDiv, GetStartCloseButton, GetStartTitlePrincipal, GetStartTitleSecundary }
+const GetStartLoginButton = styled(ButtonMainComponent)`
+    height: 45px;
+    padding: 10px;
+    background: ${COLOR.BUTTON_BACK_GROUND};
+    width: 100px;
+`;
+
+const GetStartButtonWarper = styled.div`
+    display: flex;
+    justify-content: flex-end;
+`;
+
+export {
+    GetStartSubDiv,
+    GetStartCloseButton,
+    GetStartTitlePrincipal,
+    GetStartTitleSecundary,
+    GetStartForm,
+    GetStartLoginButton,
+    GetStartButtonWarper
+}
